@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import {
+    AppContainer,
+    ApplyButton,
+    Button,
+    ButtonContainer,
+    ButtonWrapper,
+    Count,
+    CounterContainer,
+    ErrorMessage,
+    Input,
+    Label,
+    SettingsContainer,
+} from "./components";
 
 const Counter: React.FC = () => {
     const [count, setCount] = useState(0);
@@ -125,95 +137,3 @@ const Counter: React.FC = () => {
 };
 
 export default Counter;
-
-const AppContainer = styled.div`
-    background-color: #222;
-    color: #00f;
-    display: flex;
-    justify-content: center;
-    padding: 16px;
-`;
-
-const SettingsContainer = styled.div`
-    background-color: #c69e9e;
-    color: #00f;
-    border: 2px solid #00f;
-    border-radius: 8px;
-    padding: 16px;
-    margin-right: 16px;
-`;
-
-const CounterContainer = styled.div`
-    background-color: #c69e9e;
-    color: #00f;
-    border: 2px solid #00f;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const Label = styled.label`
-    margin-bottom: 8px;
-`;
-
-const Input = styled.input<{ error: boolean }>`
-    border: 1px solid ${({ error }) => (error ? "red" : "#00f")};
-    padding: 4px;
-    margin-bottom: 16px;
-`;
-
-const ErrorMessage = styled.span`
-    color: red;
-    margin-bottom: 16px;
-`;
-
-const ButtonContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
-`;
-
-const Button = styled.button<{ disabled: boolean }>`
-    margin: 0 8px;
-    padding: 12px 24px;
-    background-color: ${({ disabled }) => (disabled ? "lightgray" : "#00f")};
-    color: #fff;
-    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-
-    &:hover {
-        background-color: ${({ disabled }) =>
-            disabled ? "lightgray" : "#0077ff"};
-    }
-`;
-
-const Count = styled.span<{ reachedMaxValue: boolean }>`
-    font-size: 36px;
-    color: ${({ reachedMaxValue }) => (reachedMaxValue ? "red" : "#00f")};
-    margin-bottom: 16px;
-`;
-
-const ApplyButton = styled.button<{ disabled: boolean }>`
-    margin-top: 10px;
-    padding: 12px 24px;
-    background-color: ${({ disabled }) => (disabled ? "lightgray" : "#00f")};
-    color: #fff;
-    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-
-    &:hover {
-        background-color: ${({ disabled }) =>
-            disabled ? "lightgray" : "#0077ff"};
-    }
-`;
-
-const ButtonWrapper = styled.div`
-    display: flex;
-    margin: 0 8px;
-`;

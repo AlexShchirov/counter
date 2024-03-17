@@ -28,13 +28,18 @@
 
 import React from "react";
 
-type ButtonProps =  {
+type ButtonProps = {
     onClick: () => void;
     disabled: boolean;
     name: string;
-}
+};
 
-export const Button = ({ onClick, disabled, name, ...restProps }: ButtonProps) => {
+export const Button = ({
+    onClick,
+    disabled,
+    name,
+    ...restProps
+}: ButtonProps) => {
     return (
         <button onClick={onClick} disabled={disabled}>
             {name}
