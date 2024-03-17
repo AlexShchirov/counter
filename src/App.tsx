@@ -6,6 +6,7 @@ import {
     ButtonContainer,
     ButtonWrapper,
     Count,
+    CountContainer,
     CounterContainer,
     ErrorMessage,
     Input,
@@ -118,8 +119,11 @@ const Counter: React.FC = () => {
                     </ApplyButton>
                 </ButtonContainer>
             </SettingsContainer>
+
             <CounterContainer>
-                <Count reachedMaxValue={reachedMaxValue}>{count}</Count>
+                <CountContainer>
+                    <Count reachedMaxValue={reachedMaxValue}>{count}</Count>
+                </CountContainer>
                 <ButtonWrapper>
                     <Button
                         onClick={handleIncrement}
